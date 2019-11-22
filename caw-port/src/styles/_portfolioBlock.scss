@@ -1,0 +1,46 @@
+.lightGrayBackground {
+  background-color: $color-lightGray;
+  height: 80vh;
+}
+.midGrayBackground {
+  background-color: $color-gray;
+  height: 80vh;
+}
+.darkGrayBackground {
+  background-color: $color-darkGray;
+  height: 80vh;
+}
+
+.lightGrayBackground,
+.midGrayBackground,
+.darkGrayBackground {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.titleUnderlineLight,
+.titleUnderlineDark {
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.titleUnderlineLight:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid $color-primary;
+}
+
+.titleUnderlineDark:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid $color-primary;
+}
