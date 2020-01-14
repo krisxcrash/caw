@@ -1,41 +1,32 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import styled, { withTheme } from "styled-components"
+import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `#20232a`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import { Navbar } from "react-bootstrap"
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+import Hamburger from "./atoms/Hamburger"
+import Menu from "./organisms/Menu"
+
+const Header = () => {
+  return (
+    <>
+      {/* <Menu isOpen /> */}
+      <Navbar variant="light" expand="lg" id="site-navbar" fixed="top">
+        <Container>
+          <Link to="/" className="link-no-style">
+            <Navbar.Brand as="span">Chad Austin White</Navbar.Brand>
+          </Link>
+          <Hamburger />
+        </Container>
+      </Navbar>
+    </>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+const Container = styled.div`
+  display: inline-flex;
+  justify-content: space-between;
+  flex: 1;
+`
 
 export default Header

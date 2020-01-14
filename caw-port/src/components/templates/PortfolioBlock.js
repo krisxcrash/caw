@@ -1,23 +1,22 @@
 import React from "react"
-import styled, { withTheme } from "styled-components"
+import styled from "styled-components"
 
 import { Col, Row } from "react-bootstrap"
+import MainButton from "../molecules/MainButton"
 
 const PortfolioBlock = props => {
   const {
     backgroundColor,
-    titleUnderline,
-    fontColor,
-    eyebrow,
-    imageSide,
+    bodyText,
     buttonColor,
     buttonFontColor,
-    number,
-    theme,
-    eyebrowText,
-    titleText,
-    bodyText,
     buttonText,
+    eyebrowText,
+    fontColor,
+    imageSide,
+    number,
+    titleText,
+    titleUnderline,
   } = props
 
   return (
@@ -28,7 +27,7 @@ const PortfolioBlock = props => {
             <Col lg={8} className="test">
               <Image />
             </Col>
-            <Col lg={4} align="left" className="block">
+            <Col lg={4} align="center" className="block my-auto">
               <Block fontColor={fontColor}>
                 <Number>{number}</Number>
                 <Eyebrow>{eyebrowText}</Eyebrow>
@@ -42,18 +41,15 @@ const PortfolioBlock = props => {
                   {titleText}
                 </Title>
                 <Content>{bodyText}</Content>
-                <RoundButton
-                  buttonColor={buttonColor}
-                  buttonFontColor={buttonFontColor}
-                >
+                <MainButton color={buttonColor} fontColor={buttonFontColor}>
                   {buttonText}
-                </RoundButton>
+                </MainButton>
               </Block>
             </Col>
           </>
         ) : (
           <>
-            <Col lg={4} align="left" className="block">
+            <Col lg={4} align="center" className="block my-auto">
               <Block fontColor={fontColor}>
                 <Number>{number}</Number>
                 <Eyebrow>{eyebrowText}</Eyebrow>
@@ -67,12 +63,9 @@ const PortfolioBlock = props => {
                   {titleText}
                 </Title>
                 <Content>{bodyText}</Content>
-                <RoundButton
-                  buttonColor={buttonColor}
-                  buttonFontColor={buttonFontColor}
-                >
+                <MainButton color={buttonColor} fontColor={buttonFontColor}>
                   {buttonText}
-                </RoundButton>
+                </MainButton>
               </Block>
             </Col>
             <Col lg={8} className="test">
@@ -100,8 +93,8 @@ const Image = styled.div`
 
 const Block = styled.div`
   color: ${({ fontColor }) => fontColor};
+  flex: 1;
   max-width: 390px;
-  margin: 150px ${({ imageSide }) => (imageSide === "right" ? "auto" : 0)};
   text-align: left;
 `
 
@@ -126,18 +119,6 @@ const Title = styled.p`
 
 const Content = styled.p`
   font-size: ${({ theme }) => theme.fontSize.normal};
-`
-
-const RoundButton = styled.button`
-  align-content: center;
-  background-color: ${({ buttonColor }) => buttonColor};
-  border-radius: 27.5px;
-  box-shadow: 0 6px 12px 0 rgba(26, 26, 26, 0.21);
-  color: ${({ buttonFontColor }) => buttonFontColor};
-  flex-direction: row;
-  font-size: ${({ theme }) => theme.fontSize.small};
-  height: 53px;
-  width: 322px;
 `
 
 export default PortfolioBlock

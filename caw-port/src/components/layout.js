@@ -7,10 +7,11 @@ import GlobalStyles from "../shared/globalStyles"
 
 import { Container, Row, Col } from "react-bootstrap"
 
-import Header from "./header"
-import Navbar from "./navBar"
-import Hero from "./hero"
-import PortfolioBlock from "./molecules/portfolioBlock"
+import Header from "./Header"
+import Hero from "./Hero"
+import PortfolioBlock from "./templates/PortfolioBlock"
+import Contact from "./templates/Contact"
+import Footer from "./templates/Footer"
 
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery
@@ -26,8 +27,8 @@ const Layout = ({ children, pageInfo }) => (
     render={data => (
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Container fluid className="px-0 main">
-          <Navbar pageInfo={pageInfo} />
+        <Container fluid className="px-0">
+          <Header pageInfo={pageInfo} />
           <Row noGutters className="hero">
             <Col>
               <Container align="center">
@@ -47,7 +48,7 @@ const Layout = ({ children, pageInfo }) => (
             eyebrowText="Sr. Product Designer"
             titleText="ModCars by CarFinance"
             bodyText="Buying a car just got simple. ModCars connects the dealer, buyer and lender in one seamless experience."
-            buttonText="Learn More  →"
+            buttonText="Learn More"
           />
           <PortfolioBlock
             imageSide="right"
@@ -60,10 +61,10 @@ const Layout = ({ children, pageInfo }) => (
             eyebrowText="Sr. Product Designer"
             titleText="ModCars by CarFinance"
             bodyText="Buying a car just got simple. ModCars connects the dealer, buyer and lender in one seamless experience."
-            buttonText="Learn More  →"
+            buttonText="Learn More"
           />
           <PortfolioBlock
-            imageSide="right"
+            imageSide="left"
             backgroundColor={theme.colors.lightGray}
             buttonColor={theme.colors.black}
             buttonFontColor={theme.colors.white}
@@ -73,18 +74,29 @@ const Layout = ({ children, pageInfo }) => (
             eyebrowText="Sr. Product Designer"
             titleText="ModCars by CarFinance"
             bodyText="Buying a car just got simple. ModCars connects the dealer, buyer and lender in one seamless experience."
-            buttonText="Learn More  →"
+            buttonText="Learn More"
           />
+          <PortfolioBlock
+            imageSide="right"
+            backgroundColor={theme.colors.gray}
+            buttonColor={theme.colors.black}
+            buttonFontColor={theme.colors.white}
+            fontColor={theme.colors.black}
+            titleUnderline="dark"
+            number="01."
+            eyebrowText="Sr. Product Designer"
+            titleText="ModCars by CarFinance"
+            bodyText="Buying a car just got simple. ModCars connects the dealer, buyer and lender in one seamless experience."
+            buttonText="Learn More"
+          />
+
+          <Contact />
         </Container>
-        <Container fluid className="px-0">
+        <Container fluid className="px-0" style={{ flex: 1 }}>
           <Row noGutters>
-            <Col className="footer-col">
-              <footer>
-                <span>
-                  © {new Date().getFullYear()}, Built with
-                  {` `}
-                  <a href="https://www.gatsbyjs.org">Gatsby</a>
-                </span>
+            <Col className="footer-col" style={{ background: "black" }}>
+              <footer className="footer">
+                <Footer />
               </footer>
             </Col>
           </Row>
