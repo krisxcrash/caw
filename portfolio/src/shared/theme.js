@@ -6,6 +6,7 @@ const theme = {
     white: "#ffffff",
   },
   fontSize: {
+    extraLarge: "47px",
     large: "40px",
     normal: "24px",
     small: "16px",

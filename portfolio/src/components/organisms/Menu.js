@@ -28,5 +28,6 @@ const Container = styled.div`
 
 const Link = styled.a`
   color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.fontSize.extraLarge};
 `
 export default withTheme(Menu)
