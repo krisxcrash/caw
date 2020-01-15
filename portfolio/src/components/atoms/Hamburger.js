@@ -1,9 +1,13 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 
 const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [animatedClass, setAnimatedClass] = useState("")
+
+  useEffect(() => {
+    toggleMenu()
+  }, [isOpen])
 
   const toggleMenu = () => {
     if (isOpen) {

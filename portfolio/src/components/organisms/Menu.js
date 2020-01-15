@@ -6,25 +6,27 @@ const Menu = props => {
 
   return (
     <Container isOpen={isOpen}>
-      <Link>Home</Link>
+      <Link href="#">Home</Link>
 
-      <Link>Portfolio</Link>
+      <Link href="#">Portfolio</Link>
 
-      <Link>About</Link>
+      <Link href="#">About</Link>
     </Container>
   )
 }
 
 const Container = styled.div`
+  background-color: ${({ theme }) => theme.colors.black};
+  height: 100%;
+  left: 0;
+  overflow: hidden;
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 1000;
-  background-color: white;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  z-index: 1000;
 `
 
-const Link = styled.a``
+const Link = styled.a`
+  color: ${({ theme }) => theme.colors.white};
+`
 export default withTheme(Menu)

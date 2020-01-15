@@ -10,7 +10,7 @@ import Menu from "./organisms/Menu"
 const Header = () => {
   return (
     <>
-      {/* <Menu isOpen /> */}
+      <Menu isOpen />
       <Navbar variant="light" expand="lg" id="site-navbar" fixed="top">
         <Container>
           <Link to="/" className="link-no-style">
