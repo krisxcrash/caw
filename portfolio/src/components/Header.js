@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled, { withTheme } from "styled-components"
 import { Link } from "gatsby"
 
@@ -7,18 +7,34 @@ import { Navbar } from "react-bootstrap"
 import Hamburger from "./atoms/Hamburger"
 import Menu from "./organisms/Menu"
 
-const Header = () => {
+const Header = props => {
+  const { theme } = props
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    console.log("menuOpen")
+    if (menuOpen) {
+      setMenuOpen(false)
+    } else {
+      setMenuOpen(true)
+    }
+  }
+
   return (
     <>
-      <Menu isOpen />
       <Navbar variant="light" expand="lg" id="site-navbar" fixed="top">
         <Container>
           <Link to="/" className="link-no-style">
             <Navbar.Brand as="span">Chad Austin White</Navbar.Brand>
           </Link>
-          <Hamburger />
+          <Hamburger
+            onClick={toggleMenu}
+            isOpen={menuOpen}
+            color={theme.colors.black}
+          />
         </Container>
       </Navbar>
+      <Menu isOpen={menuOpen} />
     </>
   )
 }
@@ -29,4 +45,4 @@ const Container = styled.div`
   flex: 1;
 `
 
-export default Header
+export default withTheme(Header)
