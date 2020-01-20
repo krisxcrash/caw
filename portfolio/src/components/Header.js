@@ -12,7 +12,6 @@ const Header = props => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const toggleMenu = () => {
-    console.log("menuOpen")
     if (menuOpen) {
       setMenuOpen(false)
     } else {

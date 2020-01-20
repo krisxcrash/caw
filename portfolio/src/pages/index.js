@@ -1,15 +1,88 @@
 import React from "react"
+import styled, { withTheme } from "styled-components"
+import theme from "../shared/theme"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout pageInfo={{ pageName: "homepage" }}>
-    <SEO
-      title="Chad Austin White - UX/UI Designer"
-      keywords={[`Chad White`, `UX/UI Designer`, `UX/UI`, `Product Design`]}
-    />
-  </Layout>
-)
+import { Container, Row, Col } from "react-bootstrap"
 
-export default IndexPage
+import Hero from "../components/atoms/Hero"
+import PortfolioBlock from "../components/templates/PortfolioBlock"
+import Contact from "../components/templates/Contact"
+
+const IndexPage = () => {
+  return (
+    <Layout pageInfo={{ pageName: "homepage" }}>
+      <>
+        <SEO
+          title="Chad Austin White - UX/UI Designer"
+          keywords={[`Chad White`, `UX/UI Designer`, `UX/UI`, `Product Design`]}
+        />
+        <Row noGutters className="hero">
+          <Col>
+            <Container align="center">
+              <Hero />
+            </Container>
+          </Col>
+        </Row>
+        <PortfolioBlock
+          imageSide="left"
+          backgroundColor={theme.colors.lightGray}
+          buttonColor={theme.colors.black}
+          buttonFontColor={theme.colors.white}
+          fontColor={theme.colors.black}
+          titleUnderline="dark"
+          number="01."
+          eyebrowText="Sr. Product Designer"
+          titleText="ModCars by CarFinance"
+          bodyText="Buying a car just got simple. ModCars connects the dealer, buyer and lender in one seamless experience."
+          buttonText="Learn More"
+        />
+        <PortfolioBlock
+          imageSide="right"
+          backgroundColor={theme.colors.black}
+          buttonColor={theme.colors.white}
+          buttonFontColor={theme.colors.black}
+          fontColor={theme.colors.white}
+          titleUnderline="dark"
+          number="01."
+          eyebrowText="Sr. Product Designer"
+          titleText="ModCars by CarFinance"
+          bodyText="Buying a car just got simple. ModCars connects the dealer, buyer and lender in one seamless experience."
+          buttonText="Learn More"
+        />
+        <PortfolioBlock
+          imageSide="left"
+          backgroundColor={theme.colors.lightGray}
+          buttonColor={theme.colors.black}
+          buttonFontColor={theme.colors.white}
+          fontColor={theme.colors.black}
+          titleUnderline="dark"
+          number="01."
+          eyebrowText="Sr. Product Designer"
+          titleText="ModCars by CarFinance"
+          bodyText="Buying a car just got simple. ModCars connects the dealer, buyer and lender in one seamless experience."
+          buttonText="Learn More"
+        />
+        <PortfolioBlock
+          imageSide="right"
+          backgroundColor={theme.colors.gray}
+          buttonColor={theme.colors.black}
+          buttonFontColor={theme.colors.white}
+          fontColor={theme.colors.black}
+          titleUnderline="dark"
+          number="01."
+          eyebrowText="Sr. Product Designer"
+          titleText="ModCars by CarFinance"
+          bodyText="Buying a car just got simple. ModCars connects the dealer, buyer and lender in one seamless experience."
+          buttonText="Learn More"
+        />
+
+        <Contact />
+      </>
+    </Layout>
+  )
+}
+
+export default withTheme(IndexPage)
