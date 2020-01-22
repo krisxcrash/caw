@@ -1,7 +1,5 @@
 import React from "react"
-import styled, { withTheme } from "styled-components"
-
-import Row from "react-bootstrap/Row"
+import styled from "styled-components"
 
 const Hero = () => {
   return (
@@ -17,8 +15,9 @@ const Hero = () => {
 const Container = styled.div`
   display: flex;
   flex: 1;
-  height: 80vh;
+  min-height: 80vh;
   max-width: 55vw;
+  padding: 50px 0;
 `
 
 const Header = styled.p`

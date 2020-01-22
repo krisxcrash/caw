@@ -32,8 +32,8 @@ const Header = props => {
             color={theme.colors.black}
           />
         </Container>
+        <Menu isOpen={menuOpen} />
       </Navbar>
-      <Menu isOpen={menuOpen} />
     </>
   )
 }

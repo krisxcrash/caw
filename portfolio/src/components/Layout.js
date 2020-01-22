@@ -8,7 +8,7 @@ import GlobalStyles from "../shared/globalStyles"
 import { Container, Row, Col } from "react-bootstrap"
 
 import Header from "./Header"
-
+import Contact from "../components/templates/Contact"
 import Footer from "./templates/Footer"
 
 const Layout = ({ children, pageInfo }) => (
@@ -29,6 +29,7 @@ const Layout = ({ children, pageInfo }) => (
           <Header pageInfo={pageInfo} />
         </Container>
         {children}
+        <Contact />
         <Container fluid className="px-0" style={{ flex: 1 }}>
           <Row noGutters>
             <Col className="footer-col" style={{ background: "black" }}>

@@ -10,9 +10,14 @@ const Contact = props => {
       <Row align="center" className="h-100">
         <Col sm={12} className="align-self-center">
           <Headline>Let's work together</Headline>
-          <MainButton color={theme.colors.white} fontColor={theme.colors.black}>
-            Contact{" "}
-          </MainButton>
+          <A href="mailto:chadaustnwhite@gmail.com" target="_blank">
+            <MainButton
+              color={theme.colors.white}
+              fontColor={theme.colors.black}
+            >
+              Contact{" "}
+            </MainButton>
+          </A>
         </Col>
       </Row>
     </Container>
@@ -30,6 +35,16 @@ const Headline = styled.div`
   font-size: ${({ theme }) => theme.fontSize.large};
   color: ${({ theme }) => theme.colors.white};
   margin-bottom: 29px;
+`
+
+const A = styled.a`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
+
+  &:hover {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.black};
+  }
 `
 
 export default withTheme(Contact)

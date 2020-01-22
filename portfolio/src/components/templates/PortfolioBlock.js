@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 import { Col, Row } from "react-bootstrap"
 import MainButton from "../molecules/MainButton"
@@ -15,6 +16,7 @@ const PortfolioBlock = props => {
     fontColor,
     imageSide,
     number,
+    pageLink,
     titleText,
     titleUnderline,
   } = props
@@ -24,10 +26,10 @@ const PortfolioBlock = props => {
       <Row noGutters>
         {imageSide === "left" ? (
           <>
-            <Col lg={8} className="test">
+            <Col lg={8} md={12} className="test">
               <Image />
             </Col>
-            <Col lg={4} align="center" className="block my-auto">
+            <Col lg={4} md={12} align="center" className="block my-auto">
               <Block fontColor={fontColor}>
                 <Number>{number}</Number>
                 <Eyebrow>{eyebrowText}</Eyebrow>
@@ -42,14 +44,16 @@ const PortfolioBlock = props => {
                 </Title>
                 <Content>{bodyText}</Content>
                 <MainButton color={buttonColor} fontColor={buttonFontColor}>
-                  {buttonText}
+                  <ButtonLink fontColor={buttonFontColor} to={pageLink}>
+                    {buttonText}
+                  </ButtonLink>
                 </MainButton>
               </Block>
             </Col>
           </>
         ) : (
           <>
-            <Col lg={4} align="center" className="block my-auto">
+            <Col lg={4} md={12} align="center" className="block my-auto">
               <Block fontColor={fontColor}>
                 <Number>{number}</Number>
                 <Eyebrow>{eyebrowText}</Eyebrow>
@@ -64,11 +68,13 @@ const PortfolioBlock = props => {
                 </Title>
                 <Content>{bodyText}</Content>
                 <MainButton color={buttonColor} fontColor={buttonFontColor}>
-                  {buttonText}
+                  <ButtonLink fontColor={buttonFontColor} to={pageLink}>
+                    {buttonText}
+                  </ButtonLink>
                 </MainButton>
               </Block>
             </Col>
-            <Col lg={8} className="test">
+            <Col lg={8} md={12} className="test">
               <Image />
             </Col>
           </>
@@ -96,6 +102,15 @@ const Block = styled.div`
   flex: 1;
   max-width: 390px;
   text-align: left;
+`
+
+const ButtonLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ fontColor }) => fontColor};
+  &:hover {
+    text-decoration: none;
+    color: ${({ fontColor }) => fontColor};
+  }
 `
 
 const Number = styled.div`

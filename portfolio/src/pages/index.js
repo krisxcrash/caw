@@ -9,7 +9,7 @@ import { Container, Row, Col } from "react-bootstrap"
 
 import Hero from "../components/atoms/Hero"
 import PortfolioBlock from "../components/templates/PortfolioBlock"
-import Contact from "../components/templates/Contact"
+import DownArrow from "../icons/DownArrow"
 
 const IndexPage = () => {
   return (
@@ -19,11 +19,20 @@ const IndexPage = () => {
           title="Chad Austin White - UX/UI Designer"
           keywords={[`Chad White`, `UX/UI Designer`, `UX/UI`, `Product Design`]}
         />
-        <Row noGutters className="hero">
+        <Row noGutters className="hero" style={{ position: "relative" }}>
           <Col>
             <Container align="center">
               <Hero />
             </Container>
+            <DownArrow
+              color={theme.colors.white}
+              width={22}
+              style={{
+                position: "absolute",
+                bottom: 20,
+                left: "50vw",
+              }}
+            />
           </Col>
         </Row>
         <PortfolioBlock
@@ -38,6 +47,7 @@ const IndexPage = () => {
           titleText="ModCars by CarFinance"
           bodyText="Buying a car just got simple. ModCars connects the dealer, buyer and lender in one seamless experience."
           buttonText="Learn More"
+          pageLink="/ModCars"
         />
         <PortfolioBlock
           imageSide="right"
@@ -78,8 +88,6 @@ const IndexPage = () => {
           bodyText="Buying a car just got simple. ModCars connects the dealer, buyer and lender in one seamless experience."
           buttonText="Learn More"
         />
-
-        <Contact />
       </>
     </Layout>
   )
